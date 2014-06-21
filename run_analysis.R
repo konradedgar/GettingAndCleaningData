@@ -82,9 +82,8 @@ aves = aggregate(dta[,sapply(dta, is.numeric)],
 # Rename the columns
 names(aves)[1] <- "Subject"
 names(aves)[2] <- "Activity"
-# Sorrt data frame
+# Sorrt data frame and prepare for export
 aves <- aves[order(aves$Subject, aves$Activity),]
-
-
+aves <- aves[,-3]
 # Export tidy data
 write.table(aves, "tidy.txt", sep="\t", row.names=FALSE)

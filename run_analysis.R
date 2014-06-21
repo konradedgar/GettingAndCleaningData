@@ -84,7 +84,7 @@ names(aves)[1] <- "Subject"
 names(aves)[2] <- "Activity"
 # Sorrt data frame
 aves <- aves[order(aves$Subject, aves$Activity),]
-# Row names are removed in order not to mess up the export and later import
-rownames(aves) <- NULL
+
+
 # Export tidy data
-write.table(aves, "tidy.txt", sep="\t")
+write.table(aves, "tidy.txt", sep="\t", row.names=FALSE)
